@@ -1,0 +1,1 @@
+﻿&copy 2015 BigBand Gymnasium Syke <br /> All rights reserved
