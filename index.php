@@ -54,11 +54,7 @@ and open the template in the editor.
             <header>
                 <!-- <img src="../media/bigband-header.png" alt="BigBand Header" height="auto" width="auto"> -->
             </header>
-
-            <div id="debug">
-                Debug:
-            </div>
-
+            
             <nav id="nav">
                 <?php //include 'php/nav.php'; ?>
                 <script src="javascript/navigation.js"></script>

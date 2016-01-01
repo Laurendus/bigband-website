@@ -89,18 +89,41 @@
                     Instrument:
                 </td>
                 <td>
-                    <select name="instrument" required <?php if (!$authorization->isUserLoggedIn()) {echo "disabled";} ?>>
+                    <input type="text" name="instrument" placeholder="Bitte eintragen..." required <?php if (!$authorization->isUserLoggedIn()) {echo "disabled";} ?>>
+                    <!--<select name="instrument" required <?php //if (!$authorization->isUserLoggedIn()) {echo "disabled";} ?>>
                         <option value="">Bitte wählen...</option>
-                        <option value="Horn">Horn</option>
-                        <option value="Posaune">Posaune</option>
+                        <option value="Alt_Sax_1">Alt Sax 1</option>
+                        <option value="Alt_Sax_2">Alt Sax 2</option>
+                        <option value="Bari_Sax">Bari Sax</option>
+                        <option value="Bari_T.C._1">Bari T.C. 1</option>
+                        <option value="Bari_T.C._2">Bari T.C. 2</option>
+                        <option value="Bass_1">Bass 1</option>
+                        <option value="Bass_2">Bass 2</option>
+                        <option value="Bass_Sax">Bass Sax</option>
+                        <option value="Drums">Drums</option>
                         <option value="Gitarre">Gitarre</option>
-                        <option value="Bass">Bass</option>
-                        <option value="Klavier">Klavier</option>
+                        <option value="Gitarre_Chords">Gitarre Chords</option>
+                        <option value="Horn">Horn</option>
+                        <option value="Partitur">Partitur</option>
+                        <option value="Percussion_1">Percussion 1</option>
+                        <option value="Percussion_2">Percussion 2</option>
+                        <option value="Piano">Piano</option>
+                        <option value="Posaune_1">Posaune 1</option>
+                        <option value="Posaune_2">Posaune 2</option>
+                        <option value="Posaune_3">Posaune 3</option>
+                        <option value="Posaune_4">Posaune 4</option>
+                        <option value="Querfloeten">Querfl&ouml;ten</option>
+                        <option value="Ten_Horn">Ten Horn</option>
+                        <option value="Ten_Sax_1">Ten Sax 1</option>
+                        <option value="Ten_Sax_2">Ten Sax 2</option>
+                        <option value="Text">Text</option>
+                        <option value="Trompete_1">Trompete 1</option>
+                        <option value="Trompete_2">Trompete 2</option>
+                        <option value="Trompete_3">Trompete 3</option>
+                        <option value="Trompete_4">Trompete 4</option>
+                        <option value="Tuba">Tuba</option>
                         <option value="Vocals">Vocals</option>
-                        <option value="Trompete">Trompete</option>
-                        <option value="Klarinette">Klarinette</option>
-                        <option value="Schlagzeug">Schlagzeug</option>
-                    </select>
+                    </select> -->
                 </td>
                 <td>
                 </td>
