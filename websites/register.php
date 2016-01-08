@@ -59,7 +59,7 @@ and open the template in the editor.
         </tr>
         <tr>
             <td>
-                <input type="submit" name="registrieren" value="Registrieren" <?php if ($_SESSION['userLevel'] != 1) {echo "disabled";} ?>/>
+                <input type="submit" class="button" name="registrieren" value="Registrieren" <?php if ($_SESSION['userLevel'] != 1) {echo "disabled";} ?>/>
             </td>
         </tr>
     </table>

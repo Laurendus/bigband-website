@@ -1,7 +1,7 @@
 <h1>Upload</h1>
 <?php
-    if(!$authorization->isUserLoggedIn()) {
-        echo '<p>Sie sind nicht eingeloggt. <a href="index.php?section=login">Hier einloggen</a></p>';
+    if(!$_SESSION['userLevel']<3) {
+        echo "<p style='font-weight: bold;font-size: 20px;'>Sie haben nicht die benötigten Berechtigungen!</p>";
     } else {
         $fileDirectory = "noten";
         $files = $noten->folder_contents($fileDirectory);
@@ -71,10 +71,10 @@
                 </td>
 
                 <td>
-                    <select name="musikstueck" required <?php if (!$authorization->isUserLoggedIn()) {echo "disabled";} ?>>
+                    <select name="musikstueck" required <?php if($_SESSION['userLevel']>2) {echo "disabled";} ?>>
                         <option value="">Bitte wählen...</option>
                         <?php
-                            if($authorization->isUserLoggedIn()) {
+                            if($_SESSION['userLevel']<3) {
                                 for ($i=0; $i < sizeof($files); $i++) {
                                     echo "<option value='" . $files[$i] . "'>" . $new_files[$i] . "</option>";
                                 }
@@ -89,7 +89,7 @@
                     Instrument:
                 </td>
                 <td>
-                    <input type="text" name="instrument" placeholder="Bitte eintragen..." required <?php if (!$authorization->isUserLoggedIn()) {echo "disabled";} ?>>
+                    <input type="text" name="instrument" placeholder="Bitte eintragen..." required <?php if ($_SESSION['userLevel']>2) {echo "disabled";} ?>>
                     <!--<select name="instrument" required <?php //if (!$authorization->isUserLoggedIn()) {echo "disabled";} ?>>
                         <option value="">Bitte wählen...</option>
                         <option value="Alt_Sax_1">Alt Sax 1</option>
@@ -134,7 +134,7 @@
                 </td>
 
                 <td>
-                    <input type="file" name="fileToUpload" id="fileToUpload" required <?php if (!$authorization->isUserLoggedIn()) {echo "disabled";} ?>>
+                    <input type="file" name="fileToUpload" id="fileToUpload" required <?php if ($_SESSION['userLevel']>2) {echo "disabled";} ?>>
                 </td>
             </tr>
 
@@ -142,7 +142,7 @@
                 <td>
                 </td>
                 <td>
-                    <input type="submit" value="Upload" name="upload" <?php if (!$authorization->isUserLoggedIn()) {echo "disabled";} ?>>
+                    <input type="submit" class="button" value="Upload" name="upload" <?php if ($_SESSION['userLevel']>2) {echo "disabled";} ?>>
                 </td>
         </table>
     </form>
@@ -156,14 +156,14 @@
                     Musikstück:
                 </td>
                 <td>
-                    <input type="text" name="dirName" placeholder="Bitte eintragen..." required <?php if (!$authorization->isUserLoggedIn()) {echo "disabled";} ?>>
+                    <input type="text" name="dirName" placeholder="Bitte eintragen..." required <?php if ($_SESSION['userLevel']>2) {echo "disabled";} ?>>
                 </td>
             </tr>
             <tr>
                 <td>
                 </td>
                 <td>
-                    <input type="submit" name="createDir" value="Erstellen" <?php if (!$authorization->isUserLoggedIn()) {echo "disabled";} ?>>
+                    <input type="submit" class="button" name="createDir" value="Erstellen" <?php if ($_SESSION['userLevel']>2) {echo "disabled";} ?>>
                 </td>
             </tr>
         </table>
