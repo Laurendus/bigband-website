@@ -1,15 +1,29 @@
 <?php
+    //$database = parse_ini_file('settings.ini');
+    static $_db;
+// db_username  = bigband
+// db_password  = bigband
+// db_host      = localhost
+// db_name      = bigband
 
 class authorization {
-    private static $_db_username    = "bigband";
+    /*private static $_db_username    = "bigband";
     private static $_db_password    = "bigband";
     private static $_db_host        = "localhost";
-    private static $_db_name        = "bigband";
-    private static $_db;
+    private static $_db_name        = "bigband";*/
+    //private static $_db;
 
-    function __construct() {
+    /*function __construct() {
         try {
             self::$_db = new PDO("mysql:host=" . self::$_db_host . ";dbname=" . self::$_db_name,  self::$_db_username , self::$_db_password);
+        } catch (PDOException $e) {
+            echo "Datenbankverbindung gescheitert!";
+            die();
+        }
+    }*/
+    function __construct() {
+        try {
+            $this->_db = new PDO("mysql:host=" . $this->settings['db_host'] . ";dbname=" . $this->settings['db_name'],  $this->settings['db_user'] , $this->settings['db_password']);
         } catch (PDOException $e) {
             echo "Datenbankverbindung gescheitert!";
             die();

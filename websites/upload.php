@@ -3,7 +3,7 @@
     if(!$_SESSION['userLevel']<3) {
         echo "<p style='font-weight: bold;font-size: 20px;'>Sie haben nicht die benötigten Berechtigungen!</p>";
     } else {
-        $fileDirectory = "noten";
+        $fileDirectory = $settings['upload_path_noten'];
         $files = $noten->folder_contents($fileDirectory);
         $new_files;
         for ($i=0; $i < sizeof($files); $i++) {

@@ -12,7 +12,7 @@ and open the template in the editor.
     } else {
         $section = "";
     }
-
+    $settings= parse_ini_file('settings.ini');
     require_once 'php/mysql.php';
     $authorization = new authorization();   //include class "authorization"
     $registration = new registration();     //include class "registration"
@@ -54,13 +54,20 @@ and open the template in the editor.
             <header>
                 <!-- <img src="../media/bigband-header.png" alt="BigBand Header" height="auto" width="auto"> -->
             </header>
-            
+
             <nav id="nav">
                 <?php //include 'php/nav.php'; ?>
                 <script src="javascript/navigation.js"></script>
             </nav>
 
             <main>
+                <?php
+                    //echo $settings['db_name'] . "<br>";
+                    //echo $settings['db_host'] . "<br>";
+                    //echo $settings['db_user'] . "<br>";
+                    //echo $settings['db_password'] .  "<br>";
+                    //echo $settings['upload_path_noten'];
+                 ?>
                 <?php include 'php/sites.php'; ?>
             </main>
         </div>
