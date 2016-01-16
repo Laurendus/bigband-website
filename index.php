@@ -12,7 +12,7 @@ and open the template in the editor.
     } else {
         $section = "";
     }
-    $settings= parse_ini_file('settings.ini');
+    $settings = parse_ini_file('settings.ini');
     require_once 'php/mysql.php';
     $authorization = new authorization();   //include class "authorization"
     $registration = new registration();     //include class "registration"
