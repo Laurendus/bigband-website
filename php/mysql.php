@@ -1,5 +1,4 @@
 <?php
-    //$database = parse_ini_file('settings.ini');
     $settings = parse_ini_file('settings.ini');
     static $_db;
 // db_username  = bigband
@@ -23,10 +22,8 @@ class authorization {
         }
     }*/
     function __construct() {
-        global $settings;
-        global $_db;
         try {
-            $this->_db = new PDO("mysql:host=" . $this->settings['db_host'] . ";dbname=" . $this->settings['db_name'],  $this->settings['db_user'] , $this->settings['db_password']);
+            $globals['_db'] = new PDO("mysql:host=" . $globals['settings']['db_host'] . ";dbname=" . $globals['settings']['db_name'],  $globals['settings']['db_user'] , $globals['settings']['db_password']);
         } catch (PDOException $e) {
             echo "Datenbankverbindung gescheitert!";
             die();
