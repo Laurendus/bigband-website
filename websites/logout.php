@@ -9,6 +9,3 @@
     } else {
         echo "Du bist nicht eingeloggt!";
     }
-
-
-?>

@@ -123,7 +123,7 @@
             $directoryName = str_replace("_"," ",$files[$i]);   //Unterstriche durch Leerzeichen ersetzen
             echo "<tr>";
             echo "<td>" . $directoryName . "</td>";
-            echo "<td><input type='button' class='button' onclick='" . $noten->delete_piece($files[$i]) . "' </td>";
+            echo "<td><button class='button' onclick='" . $noten->delete_piece($files[$i]) . "'>L&ouml;schen</button></td>";
             echo "</tr>";
         }
         ?>

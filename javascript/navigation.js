@@ -72,8 +72,6 @@ if (isUserLoggedIn == 1) {
 
 switch (currentlyActive) {
     case '':
-        document.getElementById("nav1").className = "currentlyActive";
-        break;
     case 'startseite':
         document.getElementById("nav1").className = "currentlyActive";
         break;

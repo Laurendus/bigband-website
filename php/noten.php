@@ -16,5 +16,3 @@
         echo "<li><a href='php/file.php?pdfdir=" . $musikstueck . "&pdf=" . $files[$i] . "' target='_blank'>" . $fileName . "</a>";
     }
     echo "</ul>";
-?>
-<!--'<a href="websites/instrumente.php?musikstueck="' . $files[$i] . '>' . $directoryName . '</a>'-->

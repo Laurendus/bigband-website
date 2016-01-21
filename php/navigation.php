@@ -35,4 +35,3 @@
             echo "<script>currentlyActive = '';</script>";
             break;
     }
- ?>

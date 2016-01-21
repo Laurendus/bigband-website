@@ -35,4 +35,3 @@
             include("websites/404.php");
             break;
     }
-?>

@@ -2,10 +2,10 @@
 
     class noten{
 
-        function folder_contents($fileDirectory) {
-            $d = dir($fileDirectory);
+        function folder_contents($pieceName) {
+            var_dump($pieceName);
+            $d = dir($pieceName);
             $arrayAt = 0;
-            $contents;
             while (($file = $d->read()) !== false){
                 $contents[$arrayAt]= $file;
                 $arrayAt++;
@@ -27,5 +27,3 @@
             }
         }
     }
-
- ?>
