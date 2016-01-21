@@ -1,5 +1,5 @@
 <?php
-    $fileDirectory = "noten/" . $musikstueck;
+    $fileDirectory = $settings["path_noten"] . "/" . $musikstueck;
     $files = $noten->folder_contents($fileDirectory);
 
     echo "<ul>";

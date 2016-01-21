@@ -9,7 +9,7 @@
             include "php/noten.php";
 
         } else {
-            $fileDirectory = "noten";
+            $fileDirectory = $settings['path_noten'];
             $files = $noten->folder_contents($fileDirectory);
 
             echo "<ul>";

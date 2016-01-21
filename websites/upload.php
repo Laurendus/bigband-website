@@ -1,9 +1,9 @@
 <h1>Upload</h1>
 <?php
-    if(!$_SESSION['userLevel']<3) {
+    if($_SESSION["userLevel"]>3) {
         echo "<p style='font-weight: bold;font-size: 20px;'>Sie haben nicht die benötigten Berechtigungen!</p>";
     } else {
-        $fileDirectory = $settings['upload_path_noten'];
+        $fileDirectory = $settings['path_noten'];
         $files = $noten->folder_contents($fileDirectory);
         $new_files;
         for ($i=0; $i < sizeof($files); $i++) {
@@ -90,40 +90,6 @@
                 </td>
                 <td>
                     <input type="text" name="instrument" placeholder="Bitte eintragen..." required <?php if ($_SESSION['userLevel']>2) {echo "disabled";} ?>>
-                    <!--<select name="instrument" required <?php //if (!$authorization->isUserLoggedIn()) {echo "disabled";} ?>>
-                        <option value="">Bitte wählen...</option>
-                        <option value="Alt_Sax_1">Alt Sax 1</option>
-                        <option value="Alt_Sax_2">Alt Sax 2</option>
-                        <option value="Bari_Sax">Bari Sax</option>
-                        <option value="Bari_T.C._1">Bari T.C. 1</option>
-                        <option value="Bari_T.C._2">Bari T.C. 2</option>
-                        <option value="Bass_1">Bass 1</option>
-                        <option value="Bass_2">Bass 2</option>
-                        <option value="Bass_Sax">Bass Sax</option>
-                        <option value="Drums">Drums</option>
-                        <option value="Gitarre">Gitarre</option>
-                        <option value="Gitarre_Chords">Gitarre Chords</option>
-                        <option value="Horn">Horn</option>
-                        <option value="Partitur">Partitur</option>
-                        <option value="Percussion_1">Percussion 1</option>
-                        <option value="Percussion_2">Percussion 2</option>
-                        <option value="Piano">Piano</option>
-                        <option value="Posaune_1">Posaune 1</option>
-                        <option value="Posaune_2">Posaune 2</option>
-                        <option value="Posaune_3">Posaune 3</option>
-                        <option value="Posaune_4">Posaune 4</option>
-                        <option value="Querfloeten">Querfl&ouml;ten</option>
-                        <option value="Ten_Horn">Ten Horn</option>
-                        <option value="Ten_Sax_1">Ten Sax 1</option>
-                        <option value="Ten_Sax_2">Ten Sax 2</option>
-                        <option value="Text">Text</option>
-                        <option value="Trompete_1">Trompete 1</option>
-                        <option value="Trompete_2">Trompete 2</option>
-                        <option value="Trompete_3">Trompete 3</option>
-                        <option value="Trompete_4">Trompete 4</option>
-                        <option value="Tuba">Tuba</option>
-                        <option value="Vocals">Vocals</option>
-                    </select> -->
                 </td>
                 <td>
                 </td>
@@ -149,18 +115,25 @@
 </div>
 <div class="contentElement">
     <h3>Musikst&uuml;ck erstellen</h3>
+    <table>
+        <?php
+        $files = $noten->folder_contents($settings["path_noten"]);
+
+        for($i = 0; $i < sizeof($files); $i++) {
+            $directoryName = str_replace("_"," ",$files[$i]);   //Unterstriche durch Leerzeichen ersetzen
+            echo "<tr>";
+            echo "<td>" . $directoryName . "</td>";
+            echo "<td><input type='button' class='button' onclick='" . $noten->delete_piece($files[$i]) . "' </td>";
+            echo "</tr>";
+        }
+        ?>
+    </table>
+
     <form action="index.php?section=upload" method="post">
         <table>
             <tr>
                 <td>
-                    Musikstück:
-                </td>
-                <td>
                     <input type="text" name="dirName" placeholder="Bitte eintragen..." required <?php if ($_SESSION['userLevel']>2) {echo "disabled";} ?>>
-                </td>
-            </tr>
-            <tr>
-                <td>
                 </td>
                 <td>
                     <input type="submit" class="button" name="createDir" value="Erstellen" <?php if ($_SESSION['userLevel']>2) {echo "disabled";} ?>>
