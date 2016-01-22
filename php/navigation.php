@@ -27,9 +27,6 @@
         case 'upload':
             echo "<script>currentlyActive = 'upload';</script>";
             break;
-        case 'abixs':
-            echo "<script>currentlyActive = 'abixs';</script>";
-            break;
 
         default:
             echo "<script>currentlyActive = '';</script>";

@@ -25,9 +25,6 @@
         case "register":
             include("websites/register.php");
             break;
-        case 'abixs':
-            include("websites/musik_abixs.php");
-            break;
         case 'upload':
             include("websites/upload.php");
             break;

@@ -17,7 +17,6 @@ if (isUserLoggedIn == 1) {
             "<a href='index.php?section=impressum' id='nav4'>Impressum</a>" +
             "<a href='index.php?section=upload' id='nav8'>Upload</a>" +
             "<a href='index.php?section=register' id='nav7'>Register</a>"  +
-            "<a href='index.php?section=abixs' id='nav9'>AbiXS</a>" +
             "<a href='index.php?section=logout' id='nav6'>Logout</a>" +
             "</div>";
             break;
@@ -46,7 +45,6 @@ if (isUserLoggedIn == 1) {
             document.getElementById("nav").innerHTML =
             "<div id='menu'>" +
             "<a href='index.php?section=startseite' id='nav1'>Home</a>" +
-            "<a href='index.php?section=abixs' id='nav8'>AbiXS</a>" +
             "<a href='index.php?section=impressum' id='nav4'>Impressum</a>" +
             "<a href='index.php?section=logout' id='nav6'>Logout</a>" +
             "</div>";
@@ -95,9 +93,6 @@ switch (currentlyActive) {
         break;
     case 'upload':
         document.getElementById("nav8").className = "currentlyActive";
-        break;
-    case 'abixs':
-        document.getElementById("nav9").className = "currentlyActive";
         break;
     default:
         break;
