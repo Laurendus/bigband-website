@@ -15,14 +15,14 @@
             $d->close();        //fileDirectory schliessen
             return $contents;
         }
-        function delete_piece($dirName) {
-            $files = noten::folder_contents($dirName);
+        function delete_piece($deleteDirName) {
+            $delFiles = $this->folder_contents($deleteDirName);
 
-            for ($i=0; $i < sizeof($files); $i++) {
-                unlink($files[$i]);
+            for ($i=0; $i < sizeof($delFiles); $i++) {
+                unlink($delFiles[$i]);
             }
-            if(rmdir($dirName)) {
-                echo "Successfully deleted " . $dirName . "!";
+            if(rmdir($deleteDirName)) {
+                echo "Successfully deleted " . $deleteDirName . "!";
             }
         }
     }

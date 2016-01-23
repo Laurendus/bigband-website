@@ -26,7 +26,7 @@ and open the template in the editor.
 ?>
 
 <form action="index.php?section=register" method="POST">
-    <table>                                         <!-- Tabelle zur Eingabe der Logindaten -->
+    <table class="form">                                         <!-- Tabelle zur Eingabe der Logindaten -->
         <tr>
             <td>
                 Benutzername:
@@ -58,6 +58,8 @@ and open the template in the editor.
             <td>
         </tr>
         <tr>
+            <td>
+            </td>
             <td>
                 <input type="submit" class="button" name="registrieren" value="Registrieren" <?php if ($_SESSION['userLevel'] != 1) {echo "disabled";} ?>/>
             </td>
