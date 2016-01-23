@@ -4,7 +4,8 @@
         echo '<p>Sie sind nicht eingeloggt. <a href="index.php?section=login">Hier einloggen</a></p>';
     } else {
         if (isset($_GET["musikstueck"])) {
-            echo "<a href='index.php?section=musikstuecke'>zur&uuml;ck</a>";
+            echo "<script>function newDoc(){window.location.assign('http://localhost/test/index.php?section=musikstuecke')}</script>";
+            echo "<button class='button' onclick='newDoc()'>zur&uuml;ck</button>";
             $musikstueck = $_GET["musikstueck"];
             include "php/noten.php";
 
@@ -15,7 +16,7 @@
             echo "<ul>";
             for ($i=0; $i < sizeof($files); $i++) {
                 $directoryName = str_replace("_"," ",$files[$i]);   //Unterstriche durch Leerzeichen ersetzen
-                echo '<li><a href="index.php?section=musikstuecke&musikstueck=' . $files[$i] . '"">' . $directoryName . '</a></li>';    //links erstellen
+                echo '<li><a href="index.php?section=musikstuecke&musikstueck=' . $files[$i] . '">' . $directoryName . '</a></li>';    //links erstellen
             }
             echo "</ul>";
         }

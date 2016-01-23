@@ -21,6 +21,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BigBand Syke</title>
+        <link rel="icon" href="media/favicon.png" type="image/png">
         <link rel="stylesheet" type="text/css" href="css/main.css"> <!-- include main.css -->
         <link rel="stylesheet" type="text/css" href="css/nav.css">  <!-- include nav.css -->
         <link rel="stylesheet" type="text/css" href="css/style.css"><!-- include style.css -->
@@ -47,24 +48,19 @@
         <div id="wrapper">
 
             <header>
-                <!-- <img src="../media/bigband-header.png" alt="BigBand Header" height="auto" width="auto"> -->
+                <img src="media/version_4.png">
             </header>
 
+            <div id="shadow">
+
             <nav id="nav">
-                <?php //include 'php/nav.php'; ?>
                 <script src="javascript/navigation.js"></script>
             </nav>
 
             <main>
-                <?php
-                    //echo $settings['db_name'] . "<br>";
-                    //echo $settings['db_host'] . "<br>";
-                    //echo $settings['db_user'] . "<br>";
-                    //echo $settings['db_password'] .  "<br>";
-                    //echo $settings['upload_path_noten'];
-                 ?>
                 <?php include 'php/sites.php'; ?>
             </main>
+            </div>
         </div>
 
         <footer>
