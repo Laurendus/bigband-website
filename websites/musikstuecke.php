@@ -4,6 +4,7 @@
         echo '<p>Sie sind nicht eingeloggt. <a href="index.php?section=login">Hier einloggen</a></p>';
     } else {
         if (isset($_GET["musikstueck"])) {
+            //echo "<a href='index.php?section=musikstuecke'>zur&uuml;ck</a>";
             echo "<script>function newDoc(){window.location.assign('http://localhost/test/index.php?section=musikstuecke')}</script>";
             echo "<button class='button' onclick='newDoc()'>zur&uuml;ck</button>";
             $musikstueck = $_GET["musikstueck"];

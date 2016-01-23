@@ -45,11 +45,7 @@
             if(!file_exists($fileDirectory . "/" . $directory)) {       //check if directory exists
                 if(mkdir($fileDirectory . "/" . $directory,0755)) {     //create directory
                     echo "Musikstück erfolgreich angelegt!";
-                    echo "
-                    <script>
-                        location.reload(true);
-                    </script>
-                    ";                                                  //Seite aktualisieren wegen Musikstückliste
+                echo "<script>location.reload(true);</script>";         //Seite aktualisieren wegen Musikstückliste
                 } else {
                     echo "Fehler beim Erstellen des Musikstücks! Bitte kontaktieren sie den Webmaster.";
                 }
@@ -114,30 +110,25 @@
 </div>
 <div class="contentElement">
     <h3>Musikst&uuml;ck erstellen</h3>
-    <table>
+    <table class='delete_list'>
+    <form action="index.php?section=upload" method="post">
+        <tr>
+            <td>
+                <input type="text" name="dirName" placeholder="Bitte eintragen..." required <?php if ($_SESSION['userLevel']>2) {echo "disabled";} ?>>
+            </td>
+            <td>
+                <input type="submit" class="button" name="createDir" value="Erstellen" <?php if ($_SESSION['userLevel']>2) {echo "disabled";} ?>>
+            </td>
+        </tr>
+    </form>
         <?php
-        $files = $noten->folder_contents($settings["path_noten"]);
-
-        for($i = 0; $i < sizeof($files); $i++) {
-            $directoryName = str_replace("_"," ",$files[$i]);   //Unterstriche durch Leerzeichen ersetzen
-            echo "<tr>";
-            echo "<td>" . $directoryName . "</td>";
-            echo "<td><button class='button' onclick='" . $noten->delete_piece($files[$i]) . "'>L&ouml;schen</button></td>";
-            echo "</tr>";
-        }
+            for($i = 0; $i < sizeof($files); $i++) {
+                $directoryName = str_replace("_"," ",$files[$i]);   //Unterstriche durch Leerzeichen ersetzen
+                echo "<tr>";
+                echo "<td><div class='delete_list'>" . $directoryName . "</div></td>";
+                echo "<td><button class='button' onclick=''>L&ouml;schen</button></td>";
+                echo "</tr>";
+            }
         ?>
     </table>
-
-    <form action="index.php?section=upload" method="post">
-        <table>
-            <tr>
-                <td>
-                    <input type="text" name="dirName" placeholder="Bitte eintragen..." required <?php if ($_SESSION['userLevel']>2) {echo "disabled";} ?>>
-                </td>
-                <td>
-                    <input type="submit" class="button" name="createDir" value="Erstellen" <?php if ($_SESSION['userLevel']>2) {echo "disabled";} ?>>
-                </td>
-            </tr>
-        </table>
-    </form>
 </div>
