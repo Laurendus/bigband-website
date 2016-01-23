@@ -2,8 +2,6 @@
 
     switch($section) {
         case "":
-            include("websites/startseite.php");
-            break;
         case "startseite":
             include("websites/startseite.php");
             break;

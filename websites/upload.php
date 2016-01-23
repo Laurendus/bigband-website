@@ -5,7 +5,6 @@
     } else {
         $fileDirectory = $settings['path_noten'];
         $files = $noten->folder_contents($fileDirectory);
-        $new_files;
         for ($i=0; $i < sizeof($files); $i++) {
             $new_files[$i] = str_replace("_", " ", $files[$i]);
         }

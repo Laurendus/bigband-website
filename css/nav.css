@@ -38,8 +38,7 @@ and open the template in the editor.
 }
 
 .currentlyActive {
-    background: initial;
-    background-color: black;
+    background: black;
 }
 
 @media only screen and (min-width: 786px) {

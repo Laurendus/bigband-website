@@ -5,7 +5,8 @@
         header('Location: ../index.php?section=login');
 
     } else {
-        $pdfFolder = '../noten/';
+        $settings = parse_ini_file('../settings.ini');
+        $pdfFolder = '../' . $settings["path_noten"] . '/';
 
         if (isset($_GET['pdfdir'])) {
 
