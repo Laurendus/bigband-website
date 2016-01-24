@@ -10,7 +10,7 @@
             global $settings;
 
             require_once("data.php");
-            $noten = new noten;
+            $noten = new data;
 
             $check = $noten->folder_contents("../" . $settings["path_noten"]);
             $okay = FALSE;
@@ -48,3 +48,4 @@
             }
         }
     }
+?>

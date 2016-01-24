@@ -11,6 +11,9 @@
     <tr>
         <td>Autor & Designer:   </td>   <td>Laurens Müller-Groh </td>
     </tr>
+    <tr>
+        <td>Header & Favicon:   </td>   <td>Frithjof Schlesinger</td>
+    </tr>
 <!--<tr>
         <td>                    </td>   <td>                    </td>
     </tr> -->

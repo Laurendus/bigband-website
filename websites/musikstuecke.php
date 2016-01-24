@@ -12,7 +12,7 @@
 
         } else {
             $fileDirectory = $settings['path_noten'];
-            $files = $noten->folder_contents($fileDirectory);
+            $files = $data->folder_contents($fileDirectory);
 
             echo "<ul>";
             for ($i=0; $i < sizeof($files); $i++) {

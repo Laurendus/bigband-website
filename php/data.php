@@ -1,7 +1,6 @@
 <?php
 
-    class noten{
-
+    class data{
         function folder_contents($pieceName) {
             $d = dir($pieceName);
             $arrayAt = 0;
@@ -15,7 +14,7 @@
             $d->close();        //fileDirectory schliessen
             return $contents;
         }
-        function delete_piece($deleteDirName) {
+        function delete_piece($deleteDirName, $elementId) {
             $delFiles = $this->folder_contents($deleteDirName);
 
             for ($i=0; $i < sizeof($delFiles); $i++) {

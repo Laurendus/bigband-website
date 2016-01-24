@@ -3,8 +3,23 @@
     if($_SESSION["userLevel"]>3) {
         echo "<p style='font-weight: bold;font-size: 20px;'>Sie haben nicht die benötigten Berechtigungen!</p>";
     } else {
+        echo '
+            <script>
+                function delete_piece(documentID) {
+                    document.getElementById(documentID).innerHTML =
+                     "<button class=\'button\' onclick=\'yes(" + documentID + ")\'>Ja</button>" +
+                     "<button class=\'button\' onclick=\'no(" + documentID + ")\'>Nein</button>";
+                }
+                function no(documentID) {
+                    document.getElementById(documentID).innerHTML =
+                    "<button class=\'button\' onclick=\'delete_piece("documentID")\'>L&ouml;schen";
+                }
+                function yes(documentID) {
+
+                }
+            </script>';
         $fileDirectory = $settings['path_noten'];
-        $files = $noten->folder_contents($fileDirectory);
+        $files = $data->folder_contents($fileDirectory);
         for ($i=0; $i < sizeof($files); $i++) {
             $new_files[$i] = str_replace("_", " ", $files[$i]);
         }
@@ -114,10 +129,10 @@
     <form action="index.php?section=upload" method="post">
         <tr>
             <td>
-                <input type="text" name="dirName" placeholder="Bitte eintragen..." required <?php if ($_SESSION['userLevel']>2) {echo "disabled";} ?>>
+                <input type="text" name="dirName" placeholder="Bitte eintragen..." required <?php if($_SESSION['userLevel']>2){echo "disabled";}?>>
             </td>
             <td>
-                <input type="submit" class="button" name="createDir" value="Erstellen" <?php if ($_SESSION['userLevel']>2) {echo "disabled";} ?>>
+                <input type="submit" class="button" name="createDir" value="Erstellen" <?php if($_SESSION['userLevel']>2){echo "disabled";}?>>
             </td>
         </tr>
     </form>
@@ -126,7 +141,7 @@
                 $directoryName = str_replace("_"," ",$files[$i]);   //Unterstriche durch Leerzeichen ersetzen
                 echo "<tr>";
                 echo "<td><div class='delete_list'>" . $directoryName . "</div></td>";
-                echo "<td><button class='button' onclick=''>L&ouml;schen</button></td>";
+                echo "<td id=$i><button class='button' onclick='delete_piece($i)'>L&ouml;schen</button></td>";
                 echo "</tr>";
             }
         ?>

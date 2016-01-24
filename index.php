@@ -13,7 +13,7 @@
     $registration = new registration();     //include class "registration"
 
     require_once 'php/data.php';
-    $noten = new noten();
+    $data = new data();
 ?>
 
 <html lang="de-DE">
@@ -23,7 +23,7 @@
         <title>BigBand Syke</title>
         <link rel="icon" href="media/favicon.png" type="image/png">
         <link rel="stylesheet" type="text/css" href="css/main.css"> <!-- include main.css -->
-        <link rel="stylesheet" type="text/css" href="css/nav.css">  <!-- include nav.css -->
+        <link rel="stylesheet" type="text/css" href="css/nav_dev.css">  <!-- include nav.css -->
         <link rel="stylesheet" type="text/css" href="css/style.css"><!-- include style.css -->
         <script>
             var currentlyActive = '';
@@ -41,20 +41,26 @@
              ?>
         </script>
         <?php
-        include 'php/navigation.php';
+        //include 'php/navigation.php';
         ?>
     </head>
     <body>
         <div id="wrapper">
 
             <header>
-                <img src="media/Version_3.png">
+                <picture>
+                    <!--<source srcset="media/header_mobile.png" media="(max-width: 600px)">-->
+                    <source srcset="media/header.png">
+                    <img src="media/header.png" alt="Big Band with Instruments">
+                </picture>
+                <a href="javascript:void(0)" onclick="myFunction()"><img src="media/menu-icon.svg"></a>
             </header>
 
             <div id="shadow">
 
             <nav id="nav">
-                <script src="javascript/navigation.js"></script>
+                <?php include 'php/navigation_dev.php'; ?>
+                <!-- <script src="javascript/navigation.js"></script> -->
             </nav>
 
             <main>
