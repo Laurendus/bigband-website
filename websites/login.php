@@ -16,7 +16,7 @@
                 . "userLevel = " . $_SESSION['userLevel'] . ";</script>"
                 . "<script src='javascript/navigation.js'></script>";
 
-                header("Location: index.php?section=startseite");
+                header("Location: /startseite");
             } else {
                 echo "Einloggen fehlgeschlagen!";
                 //echo "<script>document.getElementById('')</script>";
@@ -25,7 +25,7 @@
     }
 ?>
 
-<form action="index.php?section=login" method="POST">
+<form action="/login" method="POST">
     <table>                                         <!-- Tabelle zur Eingabe der Logindaten -->
         <tr>
             <td>

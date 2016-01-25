@@ -25,7 +25,7 @@ and open the template in the editor.
 
 ?>
 
-<form action="index.php?section=register" method="POST">
+<form action="/register" method="POST">
     <table class="form">                                         <!-- Tabelle zur Eingabe der Logindaten -->
         <tr>
             <td>

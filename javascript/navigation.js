@@ -41,14 +41,6 @@ if (isUserLoggedIn == 1) {
             "<a href='index.php?section=logout' id='nav6'>Logout</a>" +
             "</div>";
             break;
-        case 4:
-            document.getElementById("nav").innerHTML =
-            "<div id='menu'>" +
-            "<a href='index.php?section=startseite' id='nav1'>Home</a>" +
-            "<a href='index.php?section=impressum' id='nav4'>Impressum</a>" +
-            "<a href='index.php?section=logout' id='nav6'>Logout</a>" +
-            "</div>";
-            break;
         default:
             document.getElementById("nav").innerHTML =
             "<div id='menu'>" +

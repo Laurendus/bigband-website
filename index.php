@@ -21,10 +21,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BigBand Syke</title>
-        <link rel="icon" href="media/favicon.png" type="image/png">
-        <link rel="stylesheet" type="text/css" href="css/main.css"> <!-- include main.css -->
-        <link rel="stylesheet" type="text/css" href="css/nav_dev.css">  <!-- include nav.css -->
-        <link rel="stylesheet" type="text/css" href="css/style.css"><!-- include style.css -->
+        <link rel="icon" href="media/favicon.png" type="/image/png">
+        <link rel="stylesheet" type="text/css" href="/css/main.css"> <!-- include main.css -->
+        <link rel="stylesheet" type="text/css" href="/css/nav_dev.css">  <!-- include nav.css -->
+        <link rel="stylesheet" type="text/css" href="/css/style.css"><!-- include style.css -->
         <script>
             var currentlyActive = '';
             <?php
@@ -50,8 +50,8 @@
             <header>
                 <picture>
                     <!--<source srcset="media/header_mobile.png" media="(max-width: 600px)">-->
-                    <source srcset="media/header.png">
-                    <img src="media/header.png" alt="Big Band with Instruments">
+                    <source srcset="/media/header.png">
+                    <img src="/media/header.png" alt="Big Band with Instruments">
                 </picture>
             </header>
 

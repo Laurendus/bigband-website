@@ -25,12 +25,12 @@ ul.topnav li {
     color: #f2f2f2f2;
     text-align: center;
     padding: 0.625em 1.25em;
-    transition: 0.3s;
-    font-size: 1.0625em;
+    font-size: 1.2em;
     /*display: none;*/
 }
 
 ul.topnav li a {
+    //padding: 0.625em 1.25em;
     text-decoration: none;
     color: white;
     text-transform: uppercase;
@@ -55,27 +55,22 @@ ul.topnav.responsive li a {
 }
 
 @media screen and (min-width:680px) {
-    ul.topnav li.default {
-    display: block;
-}
+    ul.topnav li {
+        display: block !important;
+        transition: 0.3s;
+        font-size: 1em;
+    }
     ul.topnav li:hover {
         background-color: #111;
     }
-
-    ul.topnav div.visibleDefault li.icon {
-        display: none;
-    }
-}
-
-@media screen and (min-width:680px) {
     ul.topnav {
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: row;
-            -ms-flex-direction: row;
-                flex-direction: row;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
     #menubutton{display:none;}
+    ul.topnav li.normal{
+        display: block;
+    }
     ul.topnav li a {
         text-transform: uppercase;
         font-weight: bold;
