@@ -53,7 +53,6 @@
                     <source srcset="media/header.png">
                     <img src="media/header.png" alt="Big Band with Instruments">
                 </picture>
-                <a href="javascript:void(0)" onclick="myFunction()"><img src="media/menu-icon.svg"></a>
             </header>
 
             <div id="shadow">
