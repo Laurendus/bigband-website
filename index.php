@@ -48,7 +48,7 @@
         <div id="wrapper">
 
             <header>
-                <img src="media/Version_3.png">
+                <img src="media/header.png">
             </header>
 
             <div id="shadow">
