@@ -1,3 +1,5 @@
-.idea/
-noten/
-_trash/
+/.idea/
+/noten/
+/_trash/
+/sass/
+/media/
