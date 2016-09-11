@@ -1,6 +1,7 @@
-/.idea/
-/noten/
-/_trash/
-/sass/
-/media/
-/css/*.map
+.idea/
+noten/
+_trash/
+sass/
+css/*.map
+.well-known
+*.log
